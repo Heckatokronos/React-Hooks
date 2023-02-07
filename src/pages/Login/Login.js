@@ -3,11 +3,12 @@ import React, { useState, useEffect, useReducer } from 'react'
 import emailReducer from './reducers/emailReducer'
 import passwordReducer from './reducers/passwordReducer'
 
-import Button from '../UI/Button/Button'
-import Card from '../UI/Card/Card'
+import Button from '../../shared/UI/Button/Button'
+import Card from '../../shared/UI/Card/Card';
 import classes from './Login.module.css'
 
 const Login = (props) => {
+
   const [formIsValid, setFormIsValid] = useState(false)
 
   const [emailState, dispatchEmail] = useReducer(emailReducer, {
@@ -27,20 +28,6 @@ const Login = (props) => {
       console.log('Cleanup')
     }
   }, [])
-
-  // useEffect(() => {
-  //   const identifier = setTimeout(() => {
-  //     console.log('Yep')
-  //     setFormIsValid(
-  //       enteredEmail.includes('@') && enteredPassword.trim().length > 6
-  //     )
-  //   }, 1000)
-
-  //   return () => {
-  //     console.log('Cleanup')
-  //     clearTimeout(identifier)
-  //   }
-  // }, [enteredEmail, enteredPassword])
 
   const emailChangeHandler = (event) => {
     dispatchEmail({
