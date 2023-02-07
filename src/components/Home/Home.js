@@ -1,7 +1,7 @@
 import React from 'react';
 
-import Card from '../../shared/UI/Card/Card'
-import classes from './Home.module.css'
+import Card from '../UI/Card/Card';
+import classes from './Home.module.css';
 
 const Home = (props) => {
   return (
@@ -11,4 +11,4 @@ const Home = (props) => {
   )
 }
 
-export default Home
+export default Home;
